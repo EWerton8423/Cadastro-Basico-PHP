@@ -12,39 +12,34 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        #formulario {
-            margin-top: 3%;
-            width: 60%;
-            float: right;
-        }
-    </style>
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="valida.js"></script>
 </head>
 
 <body>
     <h2>Cadastrar Usuário</h2>
+
     <?php
     if (isset($_SESSION['msg']))
         echo $_SESSION['msg'];
     unset($_SESSION['msg']);
     ?>
-    <form method="POST" action="processa.php">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
-        <br><br>
 
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" placeholder="Digite um e-mail válido">
-        <br><br>
+    <form>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="nome" class="form-control" id="nome" aria-describedby="nome">
+        </div>
 
-        <input type="submit" value="Cadastrar">
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </body>
 
