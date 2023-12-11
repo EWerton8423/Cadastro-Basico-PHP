@@ -23,6 +23,7 @@ include_once("conexao.php");
         .container {
             max-width: 600px;
             margin: auto;
+            padding: 20px;
         }
     </style>
 </head>
@@ -62,7 +63,17 @@ include_once("conexao.php");
         $result_pg = "SELECT COUNT(id) AS num_result FROM usuarios"; 
         $resultado_pg = mysqli_query($conn, $result_pg);
         $row_pg = mysqli_fetch_assoc($resultado_pg);
-        echo "Total: " . $row_pg['num_result'];
+        //echo "Total: " . $row_pg['num_result'];
+
+        //Quantidade de pagina 
+        $quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+
+        //Limitar o maximo de paginas
+        $max_links = 2;
+        echo "<a href='lista.php?pagina=1'>Primeira Página</a>";
+
+        echo "<a href='lista.php?pagina=$quantidade_pg'>Ultima Página</a>";
+
         ?>
     </div>
 

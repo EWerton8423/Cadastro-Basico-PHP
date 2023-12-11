@@ -22,6 +22,7 @@ session_start();
         .container {
             max-width: 600px;
             margin: auto;
+            padding: 20px;
         }
     </style>
 </head>
