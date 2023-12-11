@@ -39,7 +39,18 @@ include_once("conexao.php");
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
-        $result_usuarios = "SELECT * FROM usuarios";
+
+        //Recebe o cadastro que está o id 
+        $pagina = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
+        $pagina = (!empty ($pagina_atual)) ? $pagina_atual: 1;
+
+        //Seta a quantidade de cadastro da pagina
+        $qnt_result_pg = 2;
+
+        //Calcular o inicio
+        $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
+        $result_usuarios = "SELECT * FROM usuarios LIMIT $inicio, $qnt_result_pg";
         $resultado_usuarios = mysqli_query($conn, $result_usuarios);
         while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
             echo "ID: " . $row_usuario['id'] . "<br>";
