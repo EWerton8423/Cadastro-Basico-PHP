@@ -31,7 +31,7 @@ session_start();
 <body>
     <div class="container">
         <h1 class="text-center mt-3">Cadastro Básico</h1>
-        <form method="post" action="processa.php">
+        <form method="post" action="lista.php">
             <input type="hidden" name="acao" value="cadastrar">
 
             <div class="form-group">
