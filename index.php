@@ -30,7 +30,7 @@ session_start();
 <!-- Colocando os dados do formulario -->
 <body>
     <div class="container">
-        <h1 class="text-center mt-3">Cadastro Básico</h1>
+        <h2 class="text-center mt-3">Cadastro Básico</h2>
         <form method="post" action="lista.php">
             <input type="hidden" name="acao" value="cadastrar">
 
