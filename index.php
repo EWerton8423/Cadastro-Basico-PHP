@@ -12,34 +12,40 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Colocando o estilo do formulario -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
 </head>
 
+<!-- Fazendo o formulario do projeto -->
+<!-- Colocando os dados do formulario -->
 <body>
-    <h2>Cadastrar Usuário</h2>
+    <div class="container">
+        <h1 class="text-center mt-3">Cadastro Básico</h1>
+        <form method="post" action="processa.php">
+            <input type="hidden" name="acao" value="cadastrar">
 
-    <?php
-    if (isset($_SESSION['msg']))
-        echo $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    ?>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required class="form-control" placeholder="Insira seu nome">
+            </div>
 
-    <form>
-        <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="nome" class="form-control" id="nome" aria-describedby="nome">
-        </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required class="form-control" placeholder="exemplo@email.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
     </form>
 </body>
 
