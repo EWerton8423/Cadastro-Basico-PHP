@@ -44,7 +44,7 @@ include_once("conexao.php");
         $pagina = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
         $pagina = (!empty ($pagina_atual)) ? $pagina_atual: 1;
 
-        //Seta a quantidade de cadastro da pagina
+        //Mostra a quantidade de cadastro na pagina
         $qnt_result_pg = 2;
 
         //Calcular o inicio
@@ -57,6 +57,12 @@ include_once("conexao.php");
             echo "Nome: " . $row_usuario['nome'] . "<br>";
             echo "E-mail: " . $row_usuario['email'] . "<br><hr>" ;
         }
+
+        //Paginacao - Mostra o total de cadastro de usuarios
+        $result_pg = "SELECT COUNT(id) AS num_result FROM usuarios"; 
+        $resultado_pg = mysqli_query($conn, $result_pg);
+        $row_pg = mysqli_fetch_assoc($resultado_pg);
+        echo "Total:" . $row_pg['num_result'];
         ?>
     </div>
 
