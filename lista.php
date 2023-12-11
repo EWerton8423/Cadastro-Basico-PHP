@@ -62,7 +62,7 @@ include_once("conexao.php");
         $result_pg = "SELECT COUNT(id) AS num_result FROM usuarios"; 
         $resultado_pg = mysqli_query($conn, $result_pg);
         $row_pg = mysqli_fetch_assoc($resultado_pg);
-        echo "Total:" . $row_pg['num_result'];
+        echo "Total: " . $row_pg['num_result'];
         ?>
     </div>
 
