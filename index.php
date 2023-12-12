@@ -12,7 +12,7 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <!-- Colocando o estilo do formulario -->
     <style>
         body {
@@ -30,31 +30,33 @@ session_start();
 <!-- Fazendo o formulario do projeto -->
 <!-- Colocando os dados do formulario -->
 
-    <!-- Colocando o link para voltar para o inicio do programa -->
-    <div class="container">
+<!-- Colocando o link para voltar para o inicio do programa -->
+<div class="container">
     <a class="btn btn-primary mb-3" href="index.php" role="button">Voltar ao Início</a>
     <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
-    </div>
+</div>
 
-<body>
-    <div class="container">
-        <h2 class="text-center mt-3">Cadastro Básico</h2>
-        <form method="post" action="lista.php">
-            <input type="hidden" name="acao" value="cadastrar">
+<form method="POST" action="processa.php">
 
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required class="form-control" placeholder="Insira seu nome">
-            </div>
+    <body>
+        <div class="container">
+            <h2 class="text-center mt-3">Cadastro Básico</h2>
+            <form method="post" action="lista.php">
+                <input type="hidden" name="acao" value="cadastrar">
 
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required class="form-control" placeholder="exemplo@email.com">
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required class="form-control" placeholder="Insira seu nome">
+                </div>
 
-          </div>
-    </form>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required class="form-control" placeholder="exemplo@email.com">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+
+        </div>
+</form>
 </body>
 
 </html>
