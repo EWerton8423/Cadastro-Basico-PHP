@@ -35,7 +35,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 
 <!-- Colocando o link para voltar para o inicio do programa -->
 <div class="container">
-    <a class="btn btn-primary mb-3" href="index.php" role="button">Voltar ao Início</a>
+    <a class="btn btn-primary mb-3" href="index.php" role="button">Cadastrar Usuario</a>
     <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
 </div>
 
