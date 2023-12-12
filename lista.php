@@ -29,6 +29,7 @@ include_once("conexao.php");
 </head>
 
 <!--Colocando os dados dentro do formulario-->
+
 <body>
     <div class="container">
         <h2 class="text-center mt-3">Lista de Cadastro</h2>
@@ -36,14 +37,14 @@ include_once("conexao.php");
         <!--php usado para colocar as funcoes da listagem 
         Colocando os dados da tabela dentro da tabela -->
         <?php
-        if (isset($_SESSION['msg'])){
+        if (isset($_SESSION['msg'])) {
             echo $_SESSION['msg'];
             unset($_SESSION['msg']);
         }
 
         //Recebe o cadastro que está o id 
-        $pagina = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
-        $pagina = (!empty ($pagina_atual)) ? $pagina_atual: 1;
+        $pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
+        $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
         //Mostra a quantidade de cadastro na pagina
         $qnt_result_pg = 2;
@@ -53,14 +54,14 @@ include_once("conexao.php");
 
         $result_usuarios = "SELECT * FROM usuarios LIMIT $inicio, $qnt_result_pg";
         $resultado_usuarios = mysqli_query($conn, $result_usuarios);
-        while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
+        while ($row_usuario = mysqli_fetch_assoc($resultado_usuarios)) {
             echo "ID: " . $row_usuario['id'] . "<br>";
             echo "Nome: " . $row_usuario['nome'] . "<br>";
-            echo "E-mail: " . $row_usuario['email'] . "<br><hr>" ;
+            echo "E-mail: " . $row_usuario['email'] . "<br><hr>";
         }
 
         //Paginacao - Mostra o total de cadastro de usuarios
-        $result_pg = "SELECT COUNT(id) AS num_result FROM usuarios"; 
+        $result_pg = "SELECT COUNT(id) AS num_result FROM usuarios";
         $resultado_pg = mysqli_query($conn, $result_pg);
         $row_pg = mysqli_fetch_assoc($resultado_pg);
         //echo "Total: " . $row_pg['num_result'];
@@ -70,9 +71,24 @@ include_once("conexao.php");
 
         //Limitar o maximo de paginas
         $max_links = 2;
-        echo "<a href='lista.php?pagina=1'>Primeira Página</a>";
+        echo "<nav aria-label='Page navigation example'>";
+        echo "<ul class='pagination justify-content-center'>";
 
-        echo "<a href='lista.php?pagina=$quantidade_pg'>Ultima Página</a>";
+        //Botão Primeira Página
+        echo "<li class='page-item'>
+        <a href='lista.php?pagina=1' class='page-link'>Primeira Página</ia></a></li>";
+
+        for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
+            if ($pag_ant >= 1) {
+                echo "<li class='page-item'>
+            <a href='lista.php?pagina=$pag_ant' class='page-link'>$pag_ant</ia></a></li>";
+            }
+        }
+
+        //Botão Ultima Página
+        echo "<li class='page-item'>
+        <a href='lista.php?pagina=$quantidade_pg' class='page-link'>Ultima Página</a>";
+        echo "</li>";
 
         ?>
     </div>
