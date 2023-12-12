@@ -47,7 +47,7 @@ include_once("conexao.php");
         $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
         //Mostra a quantidade de cadastro na pagina
-        $qnt_result_pg = 2;
+        $qnt_result_pg = 1;
 
         //Calcular o inicio
         $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -74,7 +74,7 @@ include_once("conexao.php");
         echo "<nav aria-label='Page navigation example'>";
         echo "<ul class='pagination justify-content-center'>";
 
-        //Exibindo as paginas
+        //Exibindo o resto das paginas cadastradas
         for ($i = 1; $i <= $quantidade_pg; $i++) {
             $destaque = ($pagina == $i) ? 'class="page-item disabled"' : '';
             echo "<li $destaque class='page-item'><a href='?pagina=$i' class='page-link'>
@@ -85,6 +85,8 @@ include_once("conexao.php");
                 "' class='page-link'>Próxima</a></li>";
             echo "</ul>";
             echo "</nav>";
+        } elseif ($pagina > 1 && $pagina + $max_links >= $quantidade_pg) {
+            echo "<li class='page-item'><a href='?pagina=1' class='page-link'>Anterior</a></li>";
         }
 
         ?>
