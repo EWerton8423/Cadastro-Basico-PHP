@@ -31,6 +31,7 @@ session_start();
 <!-- Colocando os dados do formulario -->
 <body>
     <div class="container">
+
         
     <!-- Colocando o link para voltar para o inicio do programa -->
     <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Cadastrar</a>
