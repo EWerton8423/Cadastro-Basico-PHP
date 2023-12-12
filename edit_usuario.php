@@ -1,5 +1,10 @@
+<!-- Fazendo a conexao com o banco de dados -->
 <?php
 session_start();
+include_once("conexao.php");
+$result_usuario = "SELECT * FROM usuarios WHERE id = '2'";
+$resultado_usuario = mysqli_query($conn, $result_usuario);
+$row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +17,7 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+
     <!-- Colocando o estilo do formulario -->
     <style>
         body {
@@ -26,7 +31,7 @@ session_start();
         }
     </style>
 </head>
-    
+
 <!-- Colocando o link para voltar para o inicio do programa -->
 <div class="container">
     <a class="btn btn-primary mb-3" href="index.php" role="button">Voltar ao Início</a>
@@ -37,6 +42,34 @@ session_start();
     <div class="container">
         <!-- Formulário de edição -->
         <h2 class="text-center mt-3">Editar Usuario</h2>
-        
+        <?php
+        if (isset($_SESSION['msg'])) {
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+        }
+        ?>
+        <!-- Metodo onde vai ser salvo no banco de dados -->
+
+        <form method="POST" action="proc_edit_usuario">
+            <input type="hidden" name="acao" value="cadastrar">
+
+            <!-- Colocando os dados dentro do formulario -->
+            <div class="form-group">
+
+                <!-- Codigo usado para mostrar o ID do usuario editado -->
+                <input type="hidden" name="id" required class="form-control" value="<?= $row_usuario['id']?>">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required class="form-control" value="<?= $row_usuario['nome']?>" placeholder="Insira seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required class="form-control" value="<?= $row_usuario['email']?>" placeholder="exemplo@email.com">
+            </div>
+            <button type="submit" class="btn btn-danger">Editar</button>
+
+        </div>
+    </form>
 
 </body>
