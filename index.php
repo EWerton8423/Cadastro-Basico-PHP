@@ -29,6 +29,12 @@ session_start();
 
 <!-- Fazendo o formulario do projeto -->
 <!-- Colocando os dados do formulario -->
+
+    <!-- Colocando o link para voltar para o inicio do programa -->
+    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Cadastrar</a>
+    <br><br>
+    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Listar</a>
+    
 <body>
     <div class="container">
         <h2 class="text-center mt-3">Cadastro Básico</h2>
