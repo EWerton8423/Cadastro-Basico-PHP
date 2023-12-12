@@ -50,7 +50,7 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
         ?>
         <!-- Metodo onde vai ser salvo no banco de dados -->
 
-        <form method="POST" action="proc_edit_usuario">
+        <form method="POST" action="proc_edit_usuario.php">
             <input type="hidden" name="acao" value="cadastrar">
 
             <!-- Colocando os dados dentro do formulario -->
