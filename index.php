@@ -31,6 +31,11 @@ session_start();
 <!-- Colocando os dados do formulario -->
 <body>
     <div class="container">
+        
+    <!-- Colocando o link para voltar para o inicio do programa -->
+    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Cadastrar</a>
+    <a href="lista.php?acao=voltar&id=" class="btnbtn-primary mb-3">Listar</a>
+
         <h2 class="text-center mt-3">Cadastro Básico</h2>
         <form method="post" action="lista.php">
             <input type="hidden" name="acao" value="cadastrar">

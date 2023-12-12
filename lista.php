@@ -32,6 +32,12 @@ include_once("conexao.php");
 
 <body>
     <div class="container">
+
+    <!-- Colocando o link para voltar para o inicio do programa -->
+    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Cadastrar</a>
+    <br><br>
+    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Listar</a>
+
         <h2 class="text-center mt-3">Lista de Cadastro</h2>
 
         <!--php usado para colocar as funcoes da listagem 
@@ -79,14 +85,6 @@ include_once("conexao.php");
             $destaque = ($pagina == $i) ? 'class="page-item disabled"' : '';
             echo "<li $destaque class='page-item'><a href='?pagina=$i' class='page-link'>
                 $i </a></li>";
-        }
-        if ($pagina + $max_links < $quantidade_pg) {
-            echo "<li class='page-item'><a href='?pagina=" . ($pagina + $max_links) .
-                "' class='page-link'>Próxima</a></li>";
-            echo "</ul>";
-            echo "</nav>";
-        } elseif ($pagina > 1 && $pagina + $max_links >= $quantidade_pg) {
-            echo "<li class='page-item'><a href='?pagina=1' class='page-link'>Anterior</a></li>";
         }
 
         ?>
