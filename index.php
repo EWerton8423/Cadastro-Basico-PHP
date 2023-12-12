@@ -31,10 +31,11 @@ session_start();
 <!-- Colocando os dados do formulario -->
 
     <!-- Colocando o link para voltar para o inicio do programa -->
-    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Cadastrar</a>
-    <br><br>
-    <a href="index.php?acao=voltar&id=" class="btnbtn-primary mb-3">Listar</a>
-    
+    <div class="container">
+    <a class="btn btn-primary mb-3" href="index.php" role="button">Voltar ao Início</a>
+    <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
+    </div>
+
 <body>
     <div class="container">
         <h2 class="text-center mt-3">Cadastro Básico</h2>
