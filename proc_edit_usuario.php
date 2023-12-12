@@ -12,12 +12,13 @@ $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $result_usuario = "UPDATE usuarios SET nome='$nome', email='$email', modified=NOW() WHERE id='$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
-if(mysqli_affected_rows($conn)){
-    $_SESSION['msg'] = "";
-    header("Location: lista.php");
+//Fazendo o redirecionamento do delete 
+if (mysqli_affected_rows($conn)) {
+    $_SESSION['msg'] = "<p style='color: green'>Usuário editado com sucesso</p>";
+    header("Location:lista.php");
 } else {
-    header("Location: edit_usuario.php?id=$id");
-    $_SESSION['msg'] = "Cadastro não foi editado com sucesso";
+    $_SESSION['msg'] = "<p style='color: red'>Erro ao editar o Usuário</p>";
+    header("Location:lista.php");
 }
 
 ?>
