@@ -2,7 +2,8 @@
 <?php
 session_start();
 include_once("conexao.php");
-$result_usuario = "SELECT * FROM usuarios WHERE id = '2'";
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+$result_usuario = "SELECT * FROM usuarios WHERE id = '$id'";
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 $row_usuario = mysqli_fetch_assoc($resultado_usuario);
 ?>

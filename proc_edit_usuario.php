@@ -13,7 +13,7 @@ $result_usuario = "UPDATE usuarios SET nome='$nome', email='$email', modified=NO
 $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if(mysqli_affected_rows($conn)){
-    $_SESSION['msg'] = "Cadastro editado com sucesso";
+    $_SESSION['msg'] = "";
     header("Location: lista.php");
 } else {
     header("Location: edit_usuario.php?id=$id");

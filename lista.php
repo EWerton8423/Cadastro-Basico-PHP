@@ -53,7 +53,7 @@ include_once("conexao.php");
         $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
         //Mostra a quantidade de cadastro na pagina
-        $qnt_result_pg = 1;
+        $qnt_result_pg = 3;
 
         //Calcular o inicio
         $inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -64,6 +64,7 @@ include_once("conexao.php");
             echo "ID: " . $row_usuario['id'] . "<br>";
             echo "Nome: " . $row_usuario['nome'] . "<br>";
             echo "E-mail: " . $row_usuario['email'] . "<br><hr>";
+            echo "<a href=edit_usuario.php?id=" . $row_usuario['id'] . "'>Editar</a></br><hr>";
         }
 
         //Paginacao - Mostra o total de cadastro de usuarios
