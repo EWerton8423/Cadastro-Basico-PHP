@@ -68,7 +68,10 @@ $row_usuario = mysqli_fetch_assoc($resultado_usuario);
                 <label for="email">E-mail</label>
                 <input type="email" id="email" name="email" required class="form-control" value="<?= $row_usuario['email']?>" placeholder="exemplo@email.com">
             </div>
-            <button type="submit" class="btn btn-danger">Editar</button>
+                    
+            <input type="submit" class="btn btn-dark" value="Voltar">
+
+            <button type="submit" class="btn btn-primary">Editar</button>
 
         </div>
     </form>
