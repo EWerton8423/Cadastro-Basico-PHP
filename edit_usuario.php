@@ -26,19 +26,17 @@ session_start();
         }
     </style>
 </head>
+    
+<!-- Colocando o link para voltar para o inicio do programa -->
+<div class="container">
+    <a class="btn btn-primary mb-3" href="index.php" role="button">Voltar ao Início</a>
+    <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
+</div>
+
 <body>
-    <!-- Barra de Navegação -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-space-between">
-        <a class="navbar-brand">Sistema de Cadastros</a>
-        <div>
-            <button onclick="voltar()" class="btn btn-sm btn-outline-secondary">Voltar</button>
-            <button onclick="salvarAlteracoes('edicao')" class="btn btn-sm btn-primary">Salvar Alterações</button>
-            &nbsp;&nbsp;
-            <button onclick="salvarAlteracoes()" class="btn btn-sm btn-primary">Salvar Alterações</button>
-            </div>
-            </nav>
-            <!-- Container Principal -->
-            <div class="container">
-                <!-- Formulário para edição dos cadastros -->
-                <form method="post" action="lista.php">
+    <div class="container">
+        <!-- Formulário de edição -->
+        <h2 class="text-center mt-3">Editar Usuario</h2>
+        
+
 </body>
