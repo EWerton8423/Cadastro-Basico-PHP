@@ -65,7 +65,11 @@ include_once("conexao.php");
             echo "Nome: " . $row_usuario['nome'] . "<br>";
             echo "E-mail: " . $row_usuario['email'] . "<br><hr>";
             //Botão de edit 
-            echo "<a class='btn btn-primary' href='edit_usuario.php?id=" . $row_usuario['id'] ."'role='button'>Editar</a>" . "<br/><hr>";
+            echo "<a class='btn btn-primary' href='edit_usuario.php?id=" . $row_usuario['id']
+                . "'role='button'>Editar</a>" . "<br/><hr>";
+            //Botão de delete
+            echo "<a class='btn btn-danger' href='proc_apagar_usuario.php?id=" . $row_usuario['id']
+                . "'role='button'>Apagar</a>" . "</br><hr>";
         }
 
         //Paginacao - Mostra o total de cadastro de usuarios

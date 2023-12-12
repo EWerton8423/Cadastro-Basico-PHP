@@ -1,4 +1,5 @@
 <!-- Fazendo a conexao com o banco de dados -->
+<!-- FAZENDO O FORMULARIO DE EDIÇÃO -->
 <?php
 session_start();
 include_once("conexao.php");
