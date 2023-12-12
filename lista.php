@@ -64,7 +64,8 @@ include_once("conexao.php");
             echo "ID: " . $row_usuario['id'] . "<br>";
             echo "Nome: " . $row_usuario['nome'] . "<br>";
             echo "E-mail: " . $row_usuario['email'] . "<br><hr>";
-            echo "<a href=edit_usuario.php?id=" . $row_usuario['id'] . "'>Editar</a></br><hr>";
+            //Botão de edit 
+            echo "<a class='btn btn-primary' href='edit_usuario.php?id=" . $row_usuario['id'] . "'>Editar</a></br></hr>";
         }
 
         //Paginacao - Mostra o total de cadastro de usuarios
