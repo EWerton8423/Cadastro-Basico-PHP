@@ -43,7 +43,7 @@ include_once("conexao.php");
         }
 
         //Recebe o cadastro que está o id 
-        $pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);
+        $pagina_atual = filter_input(INPUT_GET, 'pagina', FILTER_SANITIZE_NUMBER_INT);
         $pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
         //Mostra a quantidade de cadastro na pagina
@@ -74,21 +74,18 @@ include_once("conexao.php");
         echo "<nav aria-label='Page navigation example'>";
         echo "<ul class='pagination justify-content-center'>";
 
-        //Botão Primeira Página
-        echo "<li class='page-item'>
-        <a href='lista.php?pagina=1' class='page-link'>Primeira Página</ia></a></li>";
-
-        for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
-            if ($pag_ant >= 1) {
-                echo "<li class='page-item'>
-            <a href='lista.php?pagina=$pag_ant' class='page-link'>$pag_ant</ia></a></li>";
-            }
+        //Exibindo as paginas
+        for ($i = 1; $i <= $quantidade_pg; $i++) {
+            $destaque = ($pagina == $i) ? 'class="page-item disabled"' : '';
+            echo "<li $destaque class='page-item'><a href='?pagina=$i' class='page-link'>
+                $i </a></li>";
         }
-
-        //Botão Ultima Página
-        echo "<li class='page-item'>
-        <a href='lista.php?pagina=$quantidade_pg' class='page-link'>Ultima Página</a>";
-        echo "</li>";
+        if ($pagina + $max_links < $quantidade_pg) {
+            echo "<li class='page-item'><a href='?pagina=" . ($pagina + $max_links) .
+                "' class='page-link'>Próxima</a></li>";
+            echo "</ul>";
+            echo "</nav>";
+        }
 
         ?>
     </div>
