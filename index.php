@@ -11,6 +11,7 @@ session_start();
     <title>Cadastro Basico</title>
 
     <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Colocando o estilo do formulario -->
@@ -31,14 +32,29 @@ session_start();
 <!-- Colocando os dados do formulario -->
 
 <!-- Colocando o link para voltar para o inicio do programa -->
-<div class="container">
+<!--<div class="container">
     <a class="btn btn-primary mb-3" href="index.php" role="button">Cadastrar Usuario</a>
     <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
-</div>
+</div>-->
 
 <form method="POST" action="processa.php">
 
     <body>
+        <nav>
+            <div class="logo"> CADASTRO BÁSICO </div>
+
+            <div class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="index.php" class="active">Cadastrar Usuario</a></li>
+                <li><a href="lista.php">Lista de Cadastro</a></li>
+            </ul>
+
+        </nav>
+        <script src="main.js"></script>
+
         <div class="container">
             <h2 class="text-center mt-3">Cadastro Básico</h2>
             <form method="post" action="lista.php">
