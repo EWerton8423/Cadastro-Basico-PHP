@@ -12,6 +12,7 @@ session_start();
 
     <!-- Estilos -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Colocando o estilo do formulario -->
     <style>
@@ -31,15 +32,32 @@ session_start();
 <!-- Colocando os dados do formulario -->
 
 <!-- Colocando o link para voltar para o inicio do programa -->
-<div class="container">
+<!-- <div class="container">
     <a class="btn btn-primary mb-3" href="index.php" role="button">Cadastrar Usuario</a>
     <a class="btn btn-primary mb-3" href="lista.php" role="button">Lista de Cadastro</a>
-    </div>
+</div> -->
 
 <form method="POST" action="processa.php">
 
     <body>
+        <!--Fazendo o menu do projeto no dia 22/12/2023-->
+        <header>
+            <nav>
+                <a class="logo" href="/">Cadastro de Usuario</a>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#cadastro">Cadastro</a></li>
+                    <li><a href="#lista">Lista</a></li>
+                    <li><a href="#voltar">Voltar</a></li>
+                </ul>
+            </nav>
+        </header>
 
+        <!-- Onde vai ficar a secao do cadastro -->
         <div class="container">
             <h2 class="text-center mt-3">Cadastro Básico</h2>
             <form method="post" action="lista.php">
@@ -58,6 +76,9 @@ session_start();
 
         </div>
 </form>
+<main>
+    <script src="mobile-navbar.js"></script>
+</main>
 </body>
 
 </html>
